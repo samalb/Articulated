@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON in Iframe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
 <body>
-
-    <h1>Welcome to My GitHub Pages Project</h1>
-    <iframe 
-    src="https://raw.githubusercontent.com/samalb/Articulated/refs/heads/main/Chatbot1.js" 
-    width="600" 
-    height="400" 
-    sandbox="allow-scripts allow-same-origin"
-    frameborder="0"
-    allowfullscreen>
-        </iframe>
+          
+    <h1>JSON Data</h1>
+    <pre id="jsonOutput"></pre>
+        sandbox="allow-scripts allow-same-origin"
+    <script>
+        // Replace 'path-to-your-json-file.json' with the actual URL or path to your JSON file
+        fetch('https://raw.githubusercontent.com/samalb/Articulated/refs/heads/main/Chatbot1.js')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('jsonOutput').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+    </script>
 
 </body>
 </html>
