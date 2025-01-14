@@ -40,7 +40,7 @@ function SendMessage() {
             }
         };
         var data = JSON.stringify({
-           model:  "ft:gpt-3.5-turbo-1106:personal:makeitright:AoKLhngC"
+           model:  "ft:gpt-3.5-turbo-1106:personal:makeitright:AoKLhngC",
            // model: "ft:gpt-3.5-turbo-1106:personal:makeitright:AoKLhngC:ckpt-step-90", // Specify the model
            // model: "ft:gpt-3.5-turbo-1106:personal:makeitright:AoKLhngC:ckpt-step-80"
            messages: [
