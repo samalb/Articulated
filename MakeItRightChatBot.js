@@ -42,7 +42,7 @@ function SendMessage() {
         var data = JSON.stringify({
            model: "ft:gpt-3.5-turbo-1106:learningmavens:makeitright:ApixjdEj:ckpt-step-90",
            messages: [
-                { role: "assistant", content: systemContent }, // System message
+                { role: "system", content: systemContent }, // System message
                 { role: "user", content: userContent }      // User message
             ]
         });
