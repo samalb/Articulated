@@ -41,8 +41,6 @@ function SendMessage() {
         };
         var data = JSON.stringify({
            model:  "ft:gpt-3.5-turbo-1106:learningmavens:makeitright:ApixjdEj:ckpt-step-80",
-           // model: "ft:gpt-3.5-turbo-1106:personal:makeitright:AoKLhngC:ckpt-step-90", // Specify the model
-           // model: "ft:gpt-3.5-turbo-1106:personal:makeitright:AoKLhngC:ckpt-step-80"
            messages: [
                 { role: "system", content: systemContent }, // System message
                 { role: "user", content: userContent }      // User message
