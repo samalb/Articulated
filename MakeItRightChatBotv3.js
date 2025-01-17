@@ -44,6 +44,7 @@ function SendMessage() {
            model: "ft:gpt-3.5-turbo-1106:learningmavens:makeitright:Apixktue",
            messages: [
                 { role: "system", content: systemContent }, // System message
+                { role: "assistant", content: systemContent }, // Assistant message
                 { role: "user", content: userContent }      // User message
             ]
         });
