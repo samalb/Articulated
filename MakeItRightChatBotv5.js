@@ -41,7 +41,7 @@ function SendMessage() {
             }
         };
         var data = JSON.stringify({
-           model: "ft:gpt-3.5-turbo-1106:learningmavens:makeitright:AqpSHP7P",
+           model: "ft:gpt-3.5-turbo-0125:learningmavens:refactoringmakingitright:At0egDvZ",
            messages: [
                 { role: "system", content: systemContent }, // System message
                 { role: "assistant", content: systemContent }, // Assistant message
