@@ -67,7 +67,12 @@ function SendMessage() {
                     }
                 }
             }],
-            function_call: { name: "identity", arguments: { prompt: "Who are you?" } }
+            function_call: { name: "identity", arguments: 
+                { prompt: "Who are you?",
+                  completion: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions.",
+                  refusal: "Yes"
+                } 
+            }
         });
         
         xhr.send(data); // Send the request
