@@ -44,7 +44,8 @@ function SendMessage() {
            model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B7t1K9hh",
            messages: [
                 { role: "system", content: systemContent }, 
-                { role: "user", content: userContent }       
+                { role: "user", content: userContent },
+                { role: "assistance", content: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions"}
             ]
         });
 
