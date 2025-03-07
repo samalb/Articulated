@@ -41,12 +41,13 @@ function SendMessage() {
         };
         
         var data = JSON.stringify({
-           model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B791QEAJ",
+           model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B7t1K9hh",
            messages: [
                 { role: "system", content: systemContent }, // System message
                 { role: "user", content: userContent }       // User message
             ],
-            functions: [{
+            functions: [
+                {
                 name: "identity",
                 description: "Who is the assistant",
                 parameters: {
@@ -66,11 +67,13 @@ function SendMessage() {
                         }
                     }
                 }
-            }],
-            function_call: { name: "identity", arguments: 
-                { prompt: "Who are you?",
-                  completion: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions.",
-                  refusal: "Yes"
+            }
+        ],
+            function_call: { 
+                "name": "identity", 
+                 arguments: { 
+                    prompt: "Who are you?",
+                    completion: "",
                 } 
             }
         });
