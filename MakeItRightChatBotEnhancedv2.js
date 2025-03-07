@@ -15,14 +15,14 @@ function SendMessage() {
         player.SetVar("message", "");
 
         var xhr = new XMLHttpRequest();
-        var url = 'https://api.openai.com/v1/chat/completions'; // Endpoint URL
+        var url = 'https://api.openai.com/v1/chat/completions'; 
 
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('Authorization', apiKey);
         
         xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) { // When the request is complete
+            if (xhr.readyState === 4) {
                 if (xhr.status === 200) {
                     var apiResponse = JSON.parse(xhr.responseText);
                     if (apiResponse.choices && apiResponse.choices[0] && apiResponse.choices[0].message && apiResponse.choices[0].message.content) {
@@ -39,49 +39,19 @@ function SendMessage() {
                 }
             }
         };
-        
+
         var data = JSON.stringify({
            model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B7t1K9hh",
            messages: [
-                { role: "system", content: systemContent }, // System message
-                { role: "user", content: userContent }       // User message
-            ],
-            functions: [
-                {
-                name: "identity",
-                description: "Who is the assistant",
-                parameters: {
-                    type: "object",
-                    required: [
-                        "prompt",
-                        "completion"
-                    ],
-                    properties: {
-                        prompt: {
-                            type: "string",
-                            description: "Who are you?"
-                        },
-                        completion: {
-                            type: "string",
-                            description: "The response provided by the function"
-                        }
-                    }
-                }
-            }
-        ],
-            function_call: { 
-                "name": "identity", 
-                 arguments: { 
-                    prompt: "Who are you?",
-                    completion: "",
-                } 
-            }
+                { role: "system", content: systemContent }, 
+                { role: "user", content: userContent }       
+            ]
         });
-        
-        xhr.send(data); // Send the request
+
+        xhr.send(data);
     }
 
-    sendMessage(); // Execute the sendMessage function
+    sendMessage(); 
 }
 
 function ExportChat() {
@@ -89,12 +59,12 @@ function ExportChat() {
     var chatHistory = player.GetVar("chatHistory");
 
     var blob = new Blob([chatHistory], { type: 'application/msword' });
-    var downloadLink = document.createElement("a"); // Create an anchor element
-    downloadLink.download = "Chat History.doc"; // Set the download filename
-    downloadLink.href = window.URL.createObjectURL(blob); // Create a URL for the blob
-    document.body.appendChild(downloadLink); // Append the download link to the body
+    var downloadLink = document.createElement("a");
+    downloadLink.download = "Chat History.doc"; 
+    downloadLink.href = window.URL.createObjectURL(blob); 
+    document.body.appendChild(downloadLink); 
 
-    downloadLink.click(); // Trigger the download
+    downloadLink.click(); 
 
-    document.body.removeChild(downloadLink); // Clean up
+    document.body.removeChild(downloadLink); 
 }
