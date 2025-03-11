@@ -15,7 +15,7 @@ function SendMessage() {
         player.SetVar("message", "");
 
         var xhr = new XMLHttpRequest();
-        var url = 'https://api.openai.com/v1/chat/completions'; 
+        var url = 'https://api.openai.com/v1/chat/completions?thread=thread_8tmc23QVDMkhcS9FrTn&assistant=asst_hBvmQQXAqHtkUek96uA83qse&system=I am Alex Morgan, the Head of Marketing at Lumina Tech'; 
 
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
