@@ -45,7 +45,7 @@ function SendMessage() {
            messages: [
                 { role: "system", content: systemContent }, 
                 { role: "user", content: userContent },
-                { role: "assistant", content: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions"}
+               // { role: "assistant", content: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions"}
             ]
         });
 
