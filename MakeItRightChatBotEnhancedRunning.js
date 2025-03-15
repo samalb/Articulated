@@ -26,7 +26,8 @@ async function sendMessage() {
     };
     
     try {
-        const response = await axios.post('https://api.openai.com/v1/assistants/runs', data, {
+        //const response = await axios.post('https://api.openai.com/v1/assistants/runs', data, {
+        const response = await axios.post('https://api.openai.com/v1/chat/completions',data {
             headers: {
                 'Authorization': apiKey,
                 'Content-Type': 'application/json'
