@@ -8,7 +8,7 @@ async function sendMessage() {
     
     const apiKey = 'Bearer YOUR_API_KEY'; // Replace with your actual API key
     const assistantId = 'asst_hBvmQQXAqHtkUek96uA83qse'; // Replace with your assistant ID
-   // const threadId = 'thread_8tmc23QVDMkhcS9FrTnsZ8hZ'; // Replace with your thread ID
+    const threadId = 'thread_8tmc23QVDMkhcS9FrTnsZ8hZ'; // Replace with your thread ID
 
     const systemContent = `Act as a ${role} Assistant. Provide a concise answer to the user's question in a maximum of 500 characters.`;
     const userContent = `Question: ${message}`;
@@ -25,7 +25,8 @@ async function sendMessage() {
         ]
     };
     
-    try {
+    try 
+        //const response = await axios.post('https://platform.openai.com/playground/assistants?assistant=asst_hBvmQQXAqHtkUek96uA83qse', data, {
         //const response = await axios.post('https://api.openai.com/v1/assistants/runs', data, {
         const response = await axios.post('https://api.openai.com/v1/chat/completions',data {
             headers: {
@@ -52,7 +53,7 @@ function ExportChat() {
     var player = GetPlayer();
     var chatHistory = player.GetVar("chatHistory");
 
-    var blob = new Blob([chatHistory], { type: 'application/msword' });
+    var blob = new Blob([chatHistory], { type: 'application/msword' });mode
     var downloadLink = document.createElement("a"); // Create an anchor element
     downloadLink.download = "Chat History.doc"; // Set the download filename
     downloadLink.href = window.URL.createObjectURL(blob); // Create a URL for the blob
