@@ -6,7 +6,7 @@ async function sendMessage() {
     const chatHistory = player.GetVar("chatHistory");
     const role = player.GetVar("role");
     
-    const apiKey = 'Bearer YOUR_API_KEY'; // Replace with your actual API key
+    const apiKey = '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'; // Replace with your actual API key
     const assistantId = 'asst_hBvmQQXAqHtkUek96uA83qse'; // Replace with your assistant ID
     const threadId = 'thread_8tmc23QVDMkhcS9FrTnsZ8hZ'; // Replace with your thread ID
 
@@ -46,27 +46,13 @@ async function sendMessage() {
     }
 }
 
- var data = JSON.stringify({
-           model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B7t1K9hh",
-           messages: [
-                { role: "system", content: systemContent }, // System message
-                { role: "user", content: userContent }      // User message
-            ]
-        });
-        
-        xhr.send(data); // Send the request
-    }
-
-    sendMessage(); // Execute the sendMessage function
-}
-
 // Function to export chat history
 function ExportChat() {
-    var player = GetPlayer();
-    var chatHistory = player.GetVar("chatHistory");
+    const player = GetPlayer();
+    const chatHistory = player.GetVar("chatHistory");
 
-    var blob = new Blob([chatHistory], { type: 'application/msword' });
-    var downloadLink = document.createElement("a"); // Create an anchor element
+    const blob = new Blob([chatHistory], { type: 'application/msword' });
+    const downloadLink = document.createElement("a"); // Create an anchor element
     downloadLink.download = "Chat History.doc"; // Set the download filename
     downloadLink.href = window.URL.createObjectURL(blob); // Create a URL for the blob
     document.body.appendChild(downloadLink); // Append the download link to the body
@@ -75,3 +61,6 @@ function ExportChat() {
 
     document.body.removeChild(downloadLink); // Clean up
 }
+
+// Call the sendMessage function
+sendMessage();
