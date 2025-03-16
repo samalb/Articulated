@@ -46,6 +46,20 @@ async function sendMessage() {
     }
 }
 
+ var data = JSON.stringify({
+           model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B7t1K9hh",
+           messages: [
+                { role: "system", content: systemContent }, // System message
+                { role: "user", content: userContent }      // User message
+            ]
+        });
+        
+        xhr.send(data); // Send the request
+    }
+
+    sendMessage(); // Execute the sendMessage function
+}
+
 // Function to export chat history
 function ExportChat() {
     var player = GetPlayer();
