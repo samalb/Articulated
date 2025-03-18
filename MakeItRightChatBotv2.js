@@ -40,7 +40,7 @@ function SendMessage() {
             }
         };
         var data = JSON.stringify({
-           model: "ft:gpt-3.5-turbo-1106:learningmavens:makeitright:Apixktue",
+           model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B7t1K9hh",
            messages: [
                 { role: "system", content: systemContent }, // System message
                 { role: "user", content: userContent }      // User message
