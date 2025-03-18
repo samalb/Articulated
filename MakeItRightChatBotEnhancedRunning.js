@@ -10,7 +10,7 @@ async function sendMessage() {
     const assistantId = 'asst_hBvmQQXAqHtkUek96uA83qse'; // Replace with your assistant ID
     const threadId = 'thread_8tmc23QVDMkhcS9FrTnsZ8hZ'; // Replace with your thread ID
 
-    const systemContent = `Act as a ${role} Assistant. Provide a concise answer to the user's question in a maximum of 500 characters.`;
+    const systemContent = `Act as  ${role} Alex Morgan. The Head of Marketing at Lumina Tech Solutions. Provide a concise answer to the user's question in a maximum of 500 characters.`;
     const userContent = `Question: ${message}`;
 
     player.SetVar("response", "Please wait...");
