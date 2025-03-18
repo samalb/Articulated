@@ -3,10 +3,10 @@ function SendMessage() {
     var message = player.GetVar("message");
     var response = player.GetVar("response");
     var chatHistory = player.GetVar("chatHistory");
-    var role = player.GetVar(" Alex Morgan. The Head of Marketing at Lumina Tech Solutions.");
+    var role = player.GetVar("Alex Morgan. The Head of Marketing at Lumina Tech Solutions.");
     var apiKey = player.GetVar("apiKey");
     
-    var systemContent = `Act as a ${role} Assistant. Respond as a business person who just received a cold call from a SalesPerson. The answer to the user's question in a maximum of 250 characters.`;
+    var systemContent = `Act as a ${role} Assistant. Respond as Alex Morgan a business person who just received a cold call from a SalesPerson. Once you hear the call is from Make It Right Advertising the assistant becomes more ameniable. The answer to the user's question in a maximum of 250 characters.`;
     var userContent = `Question: ${message}`;
     apiKey = `Bearer ${apiKey}`;
     
