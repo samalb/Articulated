@@ -15,7 +15,7 @@ function SendMessage() {
         player.SetVar("message", "");
 
         var xhr = new XMLHttpRequest();
-        var url = 'https://api.openai.com/v1/chat/completions?thread=thread_8tmc23QVDMkhcS9FrTn&assistant=asst_hBvmQQXAqHtkUek96uA83qse&system=I am Alex Morgan, the Head of Marketing at Lumina Tech'; 
+        var url = 'https://api.openai.com/v1/chat/completions?asst_hBvmQQXAqHtkUek96uA83qse; 
 
         xhr.open('POST', url, true);
         xhr.setRequestHeader('Content-Type', 'application/json');
@@ -43,7 +43,7 @@ function SendMessage() {
         var data = JSON.stringify({
            model: "ft:gpt-4o-2024-08-06:learningmavens:makeitright:B7t1K9hh",
            messages: [
-                { role: "system", content: systemContent }, 
+                { role: "system", content: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions"}, 
                 { role: "user", content: userContent },
                 { role: "assistant", content: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions"}
             ]
