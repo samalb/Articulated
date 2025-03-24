@@ -46,7 +46,8 @@ function SendMessage() {
                 { role: "system", content: systemContent }, 
                 { role: "user", content: userContent },
                 { role: "assistant", content: "I am Alex Morgan the Head of Marketing at Lumina Tech Solutions"}
-            ]
+            ],
+              "max_tokens": 250
         });
 
         xhr.send(data);
