@@ -1,4 +1,7 @@
-efunction SendMessage() {
+OpenAI GPT-4o mini
+
+
+How do you add a function named identity to this code ? efunction SendMessage() {
     var player = GetPlayer();
     var message = player.GetVar("message");
     var response = player.GetVar("response");
@@ -71,4 +74,3 @@ function ExportChat() {
     
     document.body.removeChild(downloadLink);
 }
-
